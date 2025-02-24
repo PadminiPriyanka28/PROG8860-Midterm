@@ -1,0 +1,12 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'Building... (replace with your build command)'",
+    "start": "node your-app-file.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
