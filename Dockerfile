@@ -1,12 +1,13 @@
-FROM node:16-alpine
+FROM node:16-alpine 
 
 WORKDIR /app
 
 COPY package*.json ./
+
 RUN npm install
 
 COPY . .
 
-RUN chmod +x /app/node_modules/.bin/jest  # Key: Fix permissions!
+RUN chmod +x /app/node_modules/.bin/jest 
 
-CMD ["npm", "start"] # Or your application's start command
+CMD ["npm", "start"]
