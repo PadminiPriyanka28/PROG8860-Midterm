@@ -14,9 +14,9 @@ test('adds 0 + 0 to equal 0', () => {
   expect(sum(0, 0)).toBe(0);
 });
 
-test('This test should fail', () => {
-  expect(sum(2, 2)).toBe(5); // Intentionally failing test
-});
+// test('This test should fail', () => {
+//   expect(sum(2, 2)).toBe(5); // Intentionally failing test
+// });
 
 test('adds large numbers', () => {
   expect(sum(1000, 2000)).toBe(3000);
