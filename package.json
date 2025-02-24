@@ -2,7 +2,7 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest",
+    "test": "npx jest",
     "build": "echo 'Building... (replace with your build command)'",
     "start": "node your-app-file.js"
   },
