@@ -14,7 +14,7 @@ This project demonstrates a Continuous Integration and Continuous Deployment (CI
 
 ## Build and Run Instructions
 
-1.  Clone the repository: `git clone <your_repository_url>`
+1.  Clone the repository: `git clone https://github.com/PadminiPriyanka28/PROG8860-Midterm.git`
 2.  Install dependencies: `npm install`
 3.  Start the development server: `npm start`
 
@@ -30,7 +30,7 @@ This project demonstrates a Continuous Integration and Continuous Deployment (CI
 3.  Go to the "Actions" tab in your GitHub repository to see the CI pipeline running.
 4.  Verify that the pipeline completes successfully and performs the desired actions (build, test, and upload).
 
-## Docker Image (If applicable)
+## Docker Image 
 
 *   **Docker Hub Repository:** [Link to your Docker Hub repository]
 *   **Pull the Docker image:**
