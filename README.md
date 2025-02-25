@@ -1,5 +1,3 @@
-# PROG8860-Midterm
-
 # My React CI/CD Project
 
 ## Overview
@@ -9,10 +7,9 @@ This project demonstrates a Continuous Integration and Continuous Deployment (CI
 ## Repository Structure
 
 *   `.github/workflows/ci.yml`: Defines the GitHub Actions workflow for the CI/CD pipeline.
-*   `src/`: Contains the source code of the React application.
-    *   `App.js`: The main React component.
-    *   `App.css`: CSS styles for the application.
-    *   `App.test.js`: Unit tests for the application.
+*   `App.js`: The main React component.
+*   `App.css`: CSS styles for the application.
+*   `App.test.js`: Unit tests for the application.
 *   `Dockerfile`: (Optional) Contains instructions for building a Docker image of the application.
 
 ## Build and Run Instructions
