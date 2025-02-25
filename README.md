@@ -35,11 +35,11 @@ This project demonstrates a Continuous Integration and Continuous Deployment (CI
 *   **Docker Hub Repository:** https://hub.docker.com/repository/docker/padminipriyankaporeddy/my-app1
 *   **Pull the Docker image:**
     ```bash
-    docker pull <your_dockerhub_username>/<your_image_name>:latest
+    docker pull padminipriyankaporeddy/my-app1:latest
     ```
 *   **Run the Docker image:**
     ```bash
-    docker run -p 3000:80 <your_dockerhub_username>/<your_image_name>:latest
+    docker run -p 3000:80 padminipriyankaporeddy/my-app1:latest
     ```
 
 ## Technologies Used
