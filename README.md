@@ -32,7 +32,7 @@ This project demonstrates a Continuous Integration and Continuous Deployment (CI
 
 ## Docker Image 
 
-*   **Docker Hub Repository:** [Link to your Docker Hub repository]
+*   **Docker Hub Repository:** https://hub.docker.com/repository/docker/padminipriyankaporeddy/my-app1
 *   **Pull the Docker image:**
     ```bash
     docker pull <your_dockerhub_username>/<your_image_name>:latest
