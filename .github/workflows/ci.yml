@@ -103,7 +103,7 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_HUB_TOKEN
 
       - name: Build Docker image
-        run: docker build -t $IMAGE_NAME:latest.
+        run: docker build -t $IMAGE_NAME:latest .
 
       - name: Push Docker image
         run: docker push $IMAGE_NAME:latest
