@@ -1,3 +1,61 @@
+# name: CI Pipeline
+
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+# jobs:
+#   build-and-test:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16  # Or your preferred version
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Make jest executable  # Add this step
+#         run: chmod +x node_modules/.bin/jest
+
+#       - name: Build application
+#         run: npm run build # Example: If you have a build script
+
+#       - name: Run tests
+#         run: npm test
+
+#   build-and-push-docker: # New job for Docker
+#     needs: build-and-test # Only runs if build-and-test succeeds
+#     if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Condition moved here
+#     runs-on: ubuntu-latest
+#     container: docker:latest
+#     env:
+#       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+#       DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+#       IMAGE_NAME: padminipriyankaporeddy/my-app # Replace with your info
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       - name: Login to Docker Hub
+#         run: |
+#             echo "Token: $DOCKER_HUB_TOKEN" 
+#             docker login -u $DOCKER_USERNAME -p $DOCKER_HUB_TOKEN
+
+#       - name: Build Docker image
+#         run: docker build -t $IMAGE_NAME:latest .
+
+#       - name: Push Docker image
+#         run: docker push $IMAGE_NAME:latest
+
 name: CI Pipeline
 
 on:
@@ -17,41 +75,35 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16  # Or your preferred version
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Make jest executable  # Add this step
+      - name: Make jest executable
         run: chmod +x node_modules/.bin/jest
-
-      - name: Build application
-        run: npm run build # Example: If you have a build script
 
       - name: Run tests
         run: npm test
 
-  build-and-push-docker: # New job for Docker
-    needs: build-and-test # Only runs if build-and-test succeeds
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Condition moved here
+  build-and-push-docker:
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    container: docker:latest
     env:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
-      IMAGE_NAME: padminipriyankaporeddy/my-app:latest . # Replace with your info
+      IMAGE_NAME: padminipriyankaporeddy/my-app1  # Replace with your Docker Hub username and image name
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Login to Docker Hub
-        run: |
-            echo "Token: $DOCKER_HUB_TOKEN" 
-            docker login -u $DOCKER_USERNAME -p $DOCKER_HUB_TOKEN
+        run: docker login -u $DOCKER_USERNAME -p $DOCKER_HUB_TOKEN
 
       - name: Build Docker image
-        run: docker build -t $IMAGE_NAME:latest .
+        run: docker build -t $IMAGE_NAME:latest.
 
       - name: Push Docker image
         run: docker push $IMAGE_NAME:latest
